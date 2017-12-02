@@ -62,6 +62,10 @@ ol, ul {
   flex-direction: row;
 }
 
+.game-top {
+  margin-top: 140px;
+}
+
 .game-info {
   margin-left: 20px;
 }

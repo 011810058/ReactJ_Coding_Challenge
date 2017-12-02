@@ -172,11 +172,18 @@ class Game extends React.Component {
         //   
     });
 
-
-
     return (
       <div className="game">
         <div className="game-board">
+          < div class="max-height: 150px">
+            <center>
+            <h1> Memory game </h1>
+              <span>
+              Flip and match hidden pairs of card !! <br/>
+              <b>HINT</b>: Remember flipped cards and there positions!!
+              </span>
+            </center>
+          </div>
           <Board
             dimenion = {this.state.selectedDimension} //replace with drop-down list later
             squares={this.state.squares}
@@ -185,29 +192,32 @@ class Game extends React.Component {
           />
         </div>
         <div className="game-info">
-
+          <div class="game-top">
+          </div>
           <div className="board-row">
            {this.btnAction(command)}
           </div>
           <br></br>
-          <b>::Select Matrix Dimension::</b>
-          <div>
+          
+          <div class="score">
+            <b>Select Matrix Dimension</b>
+            <br></br>
             <select class="wrapper-dropdown" value={this.state.selectedDimension} onChange={this.changeDimension.bind(this)}>
-              <option value="2">2x2</option>
               <option value="4">4x4</option>
               <option value="6">6x6</option>
               <option value="8">8x8</option>
             </select>
           </div>
           <br></br>
-          <b>::Your Score::</b>
-          <div class="score">{this.state.score}</div>
+          
+          <div class="score"><b>Your Score: </b>{this.state.score}</div>
           <br></br>
-          <b>::Top Score::</b>
-          <div class="score">{this.state.topScore}</div>
+          <div class="score"><b>Top Score: </b>{this.state.topScore}</div>
           <br></br>
-          <b>::Score History::</b>
-          <div class="score">{scoreTrack}</div>
+         
+          <div class="score"> <b>Score History</b>
+          <br></br>
+          {scoreTrack}</div>
         </div>
       </div>
     );
